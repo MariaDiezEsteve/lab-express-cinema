@@ -86,7 +86,7 @@ const movies = [
     }
   ];
 
-  const addmMovie= Movie.insertMany(movies)
+  const addmMovie = Movie.insertMany(movies)
   .then((movieData) => {
     console.log(`Creación de DB movies: ${movieData.length}`);
   })
