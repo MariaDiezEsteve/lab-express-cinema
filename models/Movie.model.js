@@ -13,7 +13,7 @@ const moviesSchema = new Schema ({
     image: {
         type: String
     },
-    descrition: {
+    description: {
         type: String
     },
     showtimes: {
@@ -21,6 +21,6 @@ const moviesSchema = new Schema ({
     }
 })
 
-const Movie = ("movie", moviesSchema);
+const MovieModel = model("movie", moviesSchema);
 
-module.exports = Movie;
+module.exports = MovieModel;

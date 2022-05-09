@@ -1,7 +1,3 @@
-require("../db");
-const mongoose = require("mongoose");
-const Movie = require("../models/Movie.model.js");
-
 
 const movies = [
     {
@@ -85,12 +81,22 @@ const movies = [
       showtimes: ["13:00", "15:30", "18:00", "20:10", "22:40"]
     }
   ];
+  
+  // Add here the script that will be run to actually seed the database (feel free to refer to the previous lesson)
+//Buscar el archivo index.js
+require("../db");
 
-  const addmMovie = Movie.insertMany(movies)
-  .then((movieData) => {
-    console.log(`Creación de DB movies: ${movieData.length}`);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// Acceder a la base de datos
+const MovieModel = require("../models/Movie.model.js");
 
+//Insertar elementos
+
+const addMovies = async () => {
+    try{
+        await MovieModel.insertMany(movies)
+    }catch(err){
+        console.log(err)
+    }
+    }
+    
+    addMovies()
